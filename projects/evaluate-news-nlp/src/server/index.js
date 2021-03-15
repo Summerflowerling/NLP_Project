@@ -36,9 +36,10 @@ app.listen(8081, function () {
     console.log(`Your API key is ${myApiKey}`);
 })
 
-app.get('/test', function (req, res) {
+/*app.get('/test', function (req, res) {
     res.send(projectData)
 })
+*/
 
 //post method route
 
@@ -49,10 +50,24 @@ app.get('/test', function (req, res) {
     res.send(projectData)
 })*/
 
-
+    
 app.post('/addData', async function(req, res) {
-    API_URL = `https://api.meaningcloud.com/sentiment-2.1?key=${myApiKey}&lang=auto&of=json&url=${req.body.sentence}`;
-    const result = await fetch(API_URL);    
+    API_URL = `https://api.meaningcloud.com/sentiment-2.1?key=${myApiKey}&lang=auto&of=json&txt=${req.body.content}`;
+    const data = await fetch(API_URL);
+
+    try{
+        const result = await data.json()
+        console.log(result)
+        res.send(result)
+        projectData = result
+        console.log("This is projectdata", projectData)
+
+    } catch(error){
+        console.log(error)
+    }
+
+    
 })
+
     
     

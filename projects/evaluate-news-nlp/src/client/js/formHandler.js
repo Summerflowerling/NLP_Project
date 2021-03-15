@@ -1,15 +1,10 @@
-const baseURL = "https://api.meaningcloud.com/sentiment-2.1"
-
-
-//post request
 
 function handleSubmit(event) {
     event.preventDefault()
-
     // check what text was put into the form field
     let formText = document.getElementById('name').value
     Client.checkForName(formText)
-
+    const dataToSend = {content:formText}
     
     console.log("::: Form Submitted :::")
     fetch('http://localhost:8081/addData',{
@@ -19,14 +14,13 @@ function handleSubmit(event) {
         headers:{
             'Content-Type':'application/json',
         }, 
-        body:JSON.stringify({sentence: formText}),
+        body:JSON.stringify(dataToSend),
         
     })
-    
+    .then(res=> res.json())
+    .then(json=>{console.log(json)})
    
-
-    /*postData('/addData', { sentence: formText })*/
-  
+    
 }
-
 export { handleSubmit }
+
