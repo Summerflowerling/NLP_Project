@@ -3,25 +3,30 @@
   <head>
     <meta charset="utf-8" />
     <title>Test</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <header>
-      <div class="">Logo</div>
-      <div class="">navigation</div>
+      <h1 class="title">Start Sentiment Analysis</h1>
     </header>
 
     <main>
       <section>
         <form class="" onsubmit="return Client.handleSubmit(event)">
-          <input
-            id="name"
-            type="text"
-            name="input"
+          <textarea
+            rows="3"
+            cols="80"
+            id="text"
             value=""
-            onblur="onBlur()"
-            placeholder="Name"
-          />
+            placeholder="Describe your feeling here..."
+          >
+          </textarea>
           <input
             type="submit"
             name=""
@@ -32,18 +37,20 @@
         </form>
       </section>
 
-      <section>
-        <strong>Form Results:</strong>
-        <div id="results"></div>
-        <div id="agreement"></div>
-        <div id="subjectivity"></div>
-        <div id="confidence"></div>
-        <div id="irony"></div>
+      <section id="section-result">
+        <strong>Text Results:</strong>
+        <div id="result-list" class="result-list">
+          <div id="results"></div>
+          <div id="agreement"></div>
+          <div id="subjectivity"></div>
+          <div id="confidence"></div>
+          <div id="irony"></div>
+        </div>
       </section>
     </main>
 
-    <footer>
-      <p>This is a footer</p>
+    <footer id="footer">
+      <p>Made by Yuling</p>
     </footer>
   </body>
 </html>
