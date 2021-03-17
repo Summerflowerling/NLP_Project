@@ -1,12 +1,64 @@
+$fontSizeforlist: 1.2rem;
+$crismon: "Crimson Text", serif;
+$buttonColor: #d3a588;
+$lighterColor: #f5ede0;
+$secondColor: #afabab8f;
+$min-width: 200px;
+
 form {
-    border: 1px solid #545454;
-    border-radius: 3px;
-    padding: 40px;
+  border-radius: 3px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: $min-width;
 }
 
-input {
-    padding: 5px 20px;
-    width: 100%;
-    line-height: 16px;
-    margin: 10px 0;
+.button {
+  margin-top: 1.5em;
+  font-family: $crismon;
+  font-size: $fontSizeforlist;
+  text-decoration: none;
+  background-color: $buttonColor;
+  color: $lighterColor;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 1%;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: $secondColor;
+}
+
+.button:focus {
+  outline: 0;
+}
+
+/*input text*/
+#text {
+  width: 80%;
+  min-width: $min-width;
+}
+
+/*result list*/
+.result-flex {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  font-size: $fontSizeforlist;
+  padding: 1.2em;
+  margin: 1.5em 0 0;
+  min-width: $min-width;
+}
+
+.result-list-title {
+  font-weight: bolder;
+}
+
+.result-list-section-title {
+  text-align: center;
+  font-size: $lighterColor;
+  font-weight: bold;
 }

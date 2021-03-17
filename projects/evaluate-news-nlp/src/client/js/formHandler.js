@@ -4,10 +4,19 @@ function updateUi (data){
     const subjectivity = document.getElementById("subjectivity")
     const confidence = document.getElementById("confidence")
     const irony = document.getElementById("irony")
-    agreement.innerHTML = `<h3>Agreement: <span>${data.agreement.toLowerCase()}</span></h3>`
-    subjectivity.innerHTML = `<h3>Subjectivity: <span>${data.subjectivity.toLowerCase()}</span></h3>`
-    confidence.innerHTML = `<h3>Confidence: <span>${data.confidence.toLowerCase()}</span> % </h3>`
-    irony.innerHTML = `<h3>Irony: <span>${data.irony.toLowerCase()}</span></h3>`
+    const resultList = document.getElementById("result-list")
+    const sectionResult = document.getElementById("section-result")
+    agreement.innerHTML = `<span class="result-list-title">Agreement</span>: ${data.agreement.toLowerCase()}`
+    subjectivity.innerHTML = `<span class="result-list-title">Subjectivity</span>: ${data.subjectivity.toLowerCase()}`
+    confidence.innerHTML = `<span class="result-list-title">Confidence</span>: ${data.confidence.toLowerCase()}  % `
+    irony.innerHTML = `<span class="result-list-title">Irony</span>: ${data.irony.toLowerCase()}`
+    
+    console.log()
+    if(!sectionResult.firstElementChild.classList.contains("result-list-section-title")){
+        resultList.insertAdjacentHTML("beforebegin", `<h3 class="result-list-section-title">This is your results</h3>`)    
+    }
+  
+    document.getElementById('text').value = ""
   
 }
 
@@ -33,6 +42,7 @@ function handleSubmit(event) {
     .then(json=>{
         console.log(json)
         updateUi(json)
+        
        
     })
     

@@ -1,14 +1,22 @@
+$lighterColor: #ece2d0;
+$bodyColor: #938576;
+$min-width: 200;
+
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: $bodyColor;
+  color: $lighterColor;
 }
 
 main {
+  padding-top: 10em;
   flex: 2;
 }
 
 section {
   max-width: 800px;
+  min-width: $min-width;
   margin: 50px auto;
 }

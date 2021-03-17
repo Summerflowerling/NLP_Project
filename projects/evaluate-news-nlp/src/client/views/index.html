@@ -12,22 +12,19 @@
   </head>
 
   <body>
-    <header>
-      <h1 class="title">Start Sentiment Analysis</h1>
-    </header>
-
     <main>
       <section>
-        <form class="" onsubmit="return Client.handleSubmit(event)">
+        <h1 class="title">Start Sentiment Analysis</h1>
+        <form class="form-style" onsubmit="return Client.handleSubmit(event)">
           <textarea
             rows="3"
             cols="80"
             id="text"
             value=""
-            placeholder="Describe your feeling here..."
-          >
-          </textarea>
+            placeholder="Tell me what you want to analyze"
+          ></textarea>
           <input
+            class="button"
             type="submit"
             name=""
             value="submit"
@@ -38,19 +35,20 @@
       </section>
 
       <section id="section-result">
-        <strong>Text Results:</strong>
+        <h3 class="result-list-section-title">This is your results</h3>
         <div id="result-list" class="result-list">
-          <div id="results"></div>
-          <div id="agreement"></div>
-          <div id="subjectivity"></div>
-          <div id="confidence"></div>
-          <div id="irony"></div>
+          <ul class="result-flex">
+            <li id="agreement"></li>
+            <li id="subjectivity"></li>
+            <li id="confidence"></li>
+            <li id="irony"></li>
+          </ul>
         </div>
       </section>
     </main>
 
     <footer id="footer">
-      <p>Made by Yuling</p>
+      <p>Made by Yuling | 2021</p>
     </footer>
   </body>
 </html>

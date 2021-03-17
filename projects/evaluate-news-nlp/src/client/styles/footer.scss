@@ -1,0 +1,15 @@
+$lighterColor: #ece2d0;
+$darkerColor: #938576;
+$min-width: 280px;
+
+#footer {
+  background-color: $lighterColor;
+  height: 50px;
+  min-width: $min-width;
+}
+
+#footer p {
+  text-align: center;
+  margin-top: 1em;
+  color: $darkerColor;
+}

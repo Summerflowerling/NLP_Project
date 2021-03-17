@@ -1,14 +1,10 @@
-$crismon:  'Crimson Text', serif;
+$crismon: "Crimson Text", serif;
+$secondColor: #afabab8f;
+$lighterColor: #ece2d0;
 
-
-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 40px;
-    background-color: rgb(248, 248, 255);
-    height:10em; 
-}
-
-.title{
-    font-family:$crismon ;
+.title {
+  font-family: $crismon;
+  text-align: center;
+  font-weight: bold;
+  font-size: 3rem;
 }
