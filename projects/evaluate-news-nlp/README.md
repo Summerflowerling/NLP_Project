@@ -11,3 +11,5 @@ What I have pricticed here are:
 - Creating layouts and page design
 - Service workers
 - Using APIs and creating requests to external urls
+
+To run this project, run "npm run build-dev", and in other terminal run "npm start"
