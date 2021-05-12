@@ -6,15 +6,26 @@ function updateUi (data){
     const irony = document.getElementById("irony")
     const resultList = document.getElementById("result-list")
     const sectionResult = document.getElementById("section-result")
-    agreement.innerHTML = `<span class="result-list-title">Agreement</span>: ${data.agreement.toLowerCase()}`
-    subjectivity.innerHTML = `<span class="result-list-title">Subjectivity</span>: ${data.subjectivity.toLowerCase()}`
-    confidence.innerHTML = `<span class="result-list-title">Confidence</span>: ${data.confidence.toLowerCase()}  % `
-    irony.innerHTML = `<span class="result-list-title">Irony</span>: ${data.irony.toLowerCase()}`
-    
-    console.log()
-    if(!sectionResult.firstElementChild.classList.contains("result-list-section-title")){
-        resultList.insertAdjacentHTML("beforebegin", `<h3 class="result-list-section-title">This is your results</h3>`)    
+
+    if(data.status.code != "201"){
+        agreement.innerHTML = `<span class="result-list-title">Agreement</span>: ${data.agreement.toLowerCase()}`
+        subjectivity.innerHTML = `<span class="result-list-title">Subjectivity</span>: ${data.subjectivity.toLowerCase()}`
+        confidence.innerHTML = `<span class="result-list-title">Confidence</span>: ${data.confidence.toLowerCase()}  % `
+        irony.innerHTML = `<span class="result-list-title">Irony</span>: ${data.irony.toLowerCase()}`
+
+        if(!sectionResult.firstElementChild.classList.contains("result-list-section-title")){
+            resultList.insertAdjacentHTML("beforebegin", `<h3 class="result-list-section-title">This is your results</h3>`)    
+            } else {
+            return
+            }
+
+    }else {
+        resultList.insertAdjacentHTML("beforebegin", `<h1 class="result_no_resource">${"Sorry there is no result for your content"}</h3>`)    
+
     }
+    
+   //Double check here
+    
   
     document.getElementById('text').value = ""
   
@@ -40,7 +51,7 @@ function handleSubmit(event) {
     })
     .then(res=> res.json())
     .then(json=>{
-        console.log(json)
+        console.log("This is json from handle submit", json)
         updateUi(json)
         
        
@@ -49,5 +60,5 @@ function handleSubmit(event) {
 }
 
 
-export { handleSubmit, updateUi}
+export {handleSubmit, updateUi}
 
