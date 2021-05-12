@@ -53,8 +53,14 @@ form {
   min-width: $min-width;
 }
 
-.result-list-title {
+.result-list-title,
+.result-no-resource {
   font-weight: bolder;
+}
+
+.result-no-resource {
+  text-align: center;
+  font-size: 1.3rem;
 }
 
 .result-list-section-title {
