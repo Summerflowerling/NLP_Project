@@ -16,7 +16,11 @@ In this app, simply just input a sentence, and you will get 4 different paramete
 
 ---
 
-# How to run this project
+# How to run this project with dev mode
 
 1. Run `npm run build-dev`
 2. In other terminal run `npm start`
+
+# How to run this project with Prod mode
+
+1. Run `npm run build-prod`
