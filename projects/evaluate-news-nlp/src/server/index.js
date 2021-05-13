@@ -36,19 +36,7 @@ app.listen(8081, function () {
     console.log(`Your API key is ${myApiKey}`);
 })
 
-/*app.get('/test', function (req, res) {
-    res.send(projectData)
-})
-*/
 
-//post method route
-
-
-/*app.post('/addData', function(req, res){
-    let data = req.body.sentence
-    projectData = {data};
-    res.send(projectData)
-})*/
 
     
 app.post('/addData', async function(req, res) {
