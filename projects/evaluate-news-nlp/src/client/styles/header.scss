@@ -8,3 +8,9 @@ $lighterColor: #ece2d0;
   font-weight: bold;
   font-size: 3rem;
 }
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 2rem;
+  }
+}

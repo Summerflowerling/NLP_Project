@@ -54,17 +54,36 @@ form {
 }
 
 .result-list-title,
-.result-no-resource {
+.result-list-section-title .result-no-resource {
   font-weight: bolder;
 }
 
-.result-no-resource {
+.result-no-resource,
+.result-list-section-title {
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 .result-list-section-title {
-  text-align: center;
-  font-size: $lighterColor;
-  font-weight: bold;
+  color: $lighterColor;
+}
+
+@media (max-width: 500px) {
+  .result-list-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .result-flex {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  li {
+    margin: 0.5em 0;
+  }
 }
