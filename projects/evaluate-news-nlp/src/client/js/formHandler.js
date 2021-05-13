@@ -8,22 +8,19 @@ function updateUi (data){
     const sectionResult = document.getElementById("section-result")
     
 
-    
-
-    
-
+    /*Checking the return data*/
     if(data.status.code != "201"){
+        /*If tno resource title exist, remove it*/
         if (sectionResult.firstElementChild.classList.contains("result-no-resource")){
             sectionResult.removeChild(sectionResult.firstChild);
         }
-        
         resultList.style.display ="block"
         agreement.innerHTML = `<span class="result-list-title">Agreement</span>: ${data.agreement.toLowerCase()}`
         subjectivity.innerHTML = `<span class="result-list-title">Subjectivity</span>: ${data.subjectivity.toLowerCase()}`
         confidence.innerHTML = `<span class="result-list-title">Confidence</span>: ${data.confidence.toLowerCase()}  % `
         irony.innerHTML = `<span class="result-list-title">Irony</span>: ${data.irony.toLowerCase()}`
         
-
+        /*If the result list title has never been created, create it; if it has been created before, display it.*/
         if(!sectionResult.firstElementChild.classList.contains("result-list-section-title")){
             resultList.insertAdjacentHTML("beforebegin", `<h3 id="result-list-title" class="result-list-section-title">This is your results</h3>`) 
             
@@ -40,19 +37,15 @@ function updateUi (data){
             return
         }
         
-
     }
-    
-   //Double check here
-    
   
     document.getElementById('text').value = ""
   
 }
 
+
 function handleSubmit(event) {
     event.preventDefault()
-    
     // check what text was put into the form field
     let formText = document.getElementById('text').value
     Client.checkForContent(formText)
