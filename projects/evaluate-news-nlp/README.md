@@ -21,6 +21,16 @@ In this app, simply just input a sentence, and you will get 4 different paramete
 1. Run `npm run build-dev`
 2. In other terminal run `npm start`
 
-# How to run this project with Prod mode
+# How to run this project with prod mode
 
 1. Run `npm run build-prod`
+
+---
+
+# What to do if code isn't updated
+
+1. Delete the dist file
+2. Run `npm run build-prod`
+3. In other terminal run `npm start`
+4. Run `npm run build-dev`
+5. Hard reload the web page.
