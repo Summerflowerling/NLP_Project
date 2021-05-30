@@ -10,7 +10,7 @@ function updateUi (data){
 
     /*Checking the return data*/
     if(data.status.code != "201"){
-        /*If tno resource title exist, remove it*/
+        /*If no resource title exist, remove it*/
         if (sectionResult.firstElementChild.classList.contains("result-no-resource")){
             sectionResult.removeChild(sectionResult.firstChild);
         }
