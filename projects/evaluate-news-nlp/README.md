@@ -1,7 +1,7 @@
 # Project Instructions
 
-This is a project from Udacity, which using meaningCloud Api to do sentiment analysis.
-In this app, simply just input a sentence, and you will get 4 different parameters back, which are **agreement**, **subjecttivity**, **confidence** and **irony**.
+This is a project from Udacity, which uses the meaningCloud API to do sentiment analysis. 
+In this app, simply input a sentence. The app will return four different parameters: **agreement**, **subjecttivity**, **confidence** and **irony**.
 
 ---
 
